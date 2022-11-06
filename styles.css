@@ -1,0 +1,486 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&family=Outfit:wght@200;400;600;800&display=swap');
+
+:root {
+  /*Fonts*/
+  --f-heading: 'Outfit', sans-serif;
+  --f-body: 'Montserrat', sans-serif;
+
+  /*Colours*/
+  --c-1: #56494c;
+  --c-2: #ff773d;
+  --c-3: #fddf1d;
+  --c-4: #fffceb;
+
+  /*Sizing*/
+  --sm: 0.5em;
+  --md: 1em;
+  --lg: 1.5em;
+  --xl: 2em;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+}
+
+section,
+header {
+  scroll-snap-align: start;
+  scroll-padding-top: 70px;
+}
+
+body {
+  background-color: var(--c-4);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%2356494c' fill-opacity='0.04' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-track-color: var(--c-3);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+p {
+  color: var(--c-1);
+  font-family: var(--f-body);
+  font-weight: 400;
+  font-size: var(--md);
+  margin-top: var(--md);
+}
+
+/*Navigation*/
+.nav,
+.nav-wrapper,
+.nav-logo-wrapper,
+.nav-bar,
+.nav-links,
+.footer-links,
+.footer-logo-wrapper,
+.section-br {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav {
+  width: 100vw;
+  height: 70px;
+  background-color: var(--c-1);
+
+  justify-content: center;
+}
+
+.nav-wrapper {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 10vw;
+
+  justify-content: space-between;
+}
+
+.nav-logo,
+.footer-logo {
+  padding-right: var(--md);
+}
+
+.nav-title,
+.footer-title {
+  font-family: var(--f-heading);
+  font-weight: 800;
+  color: var(--c-3);
+  letter-spacing: 0.2em;
+}
+
+.nav-links,
+.footer-links {
+  list-style: none;
+  justify-content: space-between;
+}
+
+.nav-links li,
+.footer-links li {
+  padding: var(--md);
+}
+
+.nav-links li a,
+.footer-links li a {
+  font-family: var(--f-heading);
+  font-weight: 400;
+  color: var(--c-4);
+  text-decoration: none;
+  border-bottom: 2px dashed var(--c-3);
+  border-bottom-width: 0;
+  transition: all 0.1s ease-in-out;
+}
+
+.nav-links li a:hover,
+.footer-links li a:hover {
+  border-bottom: 2px dashed var(--c-3);
+  border-bottom-width: 100%;
+}
+
+/*Burger*/
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 2px;
+  background-color: var(--c-4);
+  margin: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+#header {
+  position: fixed;
+}
+
+/*Sections*/
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 70px 0;
+
+
+}
+
+.section-br,
+.section-description,
+.hero-description {
+  width: 100%;
+  max-width: 800px;
+}
+
+.section-title {
+  font-family: var(--f-heading);
+  font-weight: 800;
+  font-size: var(--xl);
+  color: var(--c-1);
+  text-align: center;
+
+}
+
+.line {
+  width: 200px;
+  border: 2px dashed var(--c-1);
+  padding: 0 var(--xl);
+}
+
+.bee-divider {
+  height: 50px;
+  margin: 0 var(--lg);
+}
+
+.section-br {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 600px;
+
+  margin-bottom: var(--xl);
+  margin-top: var(--md);
+}
+
+.section-description {
+  font-family: var(--f-body);
+  font-weight: 400;
+
+  margin-bottom: var(--xl);
+}
+
+/*Hero*/
+.hero-title {
+  width: 100%;
+  max-width: 600px;
+}
+
+/*About*/
+#about {
+  background-color: var(--c-1);
+}
+
+#about .section-title,
+#about .section-description {
+  color: var(--c-4);
+}
+
+#about .line {
+  border: 1px var(--c-4) dashed;
+}
+
+#video {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: var(--lg);
+}
+
+
+/*Products*/
+.products-grid {
+  width: 100%;
+  margin-top: var(--xl);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+
+}
+
+.product-wrapper {
+  height: 700px;
+  place-items: center;
+  text-align: center;
+  padding-bottom: var(--xl);
+}
+
+.product-img {
+  width: 100%;
+  height: 50%;
+  object-position: center center;
+  object-fit: cover;
+}
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.product-price {
+  opacity: 50%;
+  font-family: var(--f-heading);
+  font-weight: 600;
+  font-size: var(--lg);
+  letter-spacing: 0.4em;
+}
+
+.product-title {
+  font-family: var(--f-heading);
+  font-weight: 600;
+  font-size: var(--lg);
+  letter-spacing: 0.2em;
+}
+
+.product-description {
+  max-width: 300px;
+  font-family: var(--f-body);
+  font-weight: 400;
+  font-size: var(--md);
+  margin-bottom: var(--md)
+}
+
+.product-button {
+  height: 60px;
+  display: grid;
+  place-items: center;
+  margin-bottom: var(--md);
+
+  padding: 0 var(--md);
+  border: 2px dashed transparent;
+  background-color: transparent;
+  transition: all 0.1s ease-in-out;
+}
+
+.product-button a {
+  color: var(--c-1);
+  font-family: var(--f-heading);
+  font-size: var(--md);
+  font-weight: 600;
+}
+
+.product-button:hover {
+  border: 2px dashed var(--c-3);
+}
+
+.one {
+  background-color: var(--c-1);
+}
+
+.one,
+.one p,
+.one a,
+.two,
+.two p,
+.two a {
+  color: var(--c-4);
+}
+
+.two {
+  background-color: var(--c-2);
+}
+
+.two .product-button:hover {
+  border: 2px dashed var(--c-4);
+}
+
+.three {
+  background-color: var(--c-3);
+}
+
+.three .product-button:hover {
+  border: 2px dashed var(--c-2);
+}
+
+.four {
+  background-color: var(--c-4);
+}
+
+.four .product-button:hover {
+  border: 2px dashed var(--c-1);
+}
+
+.product-button i {
+  font-size: var(--md);
+  padding-left: var(--md);
+}
+
+/*Contact*/
+form {
+  text-align: center;
+}
+
+input[type="submit"] {
+  border: none;
+  background-color: var(--c-1);
+  color: var(--c-4);
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1em;
+  border: 2px dashed transparent;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--c-2);
+  transition: .5s;
+}
+
+input[type="email"] {
+  border: 2px dashed var(--c-1);
+  background-color: transparent;
+  padding: 1em;
+  width: 25%;
+}
+
+input[type="email"]:focus:invalid {
+  outline: none;
+  border: 2px solid #c0392b;
+  transition: all .3s ease-in-out;
+
+}
+
+input[type="email"]:focus:valid {
+  outline: none;
+  border: 2px solid #27ae60;
+  transition: all .3s ease-in-out;
+
+}
+
+
+/*Footer*/
+.footer-wrapper {
+  width: 100vw;
+  height: 200px;
+  background-color: var(--c-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* TABLET */
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 50%;
+  }
+}
+
+/* MOBILE */
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    /* Prevents the screen from scrolling to the hidden content */
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    top: 70px;
+    background-color: var(--c-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* Full screen navigation, 50% for less, etc...*/
+    transform: translateX(100%);
+    /* Hidden off to the side and will slide in when the class changes via JS and CSS*/
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .nav-links li {
+    padding: var(--xl) 0;
+    opacity: 0;
+  }
+
+  .nav-links li:last-of-type {
+    padding: calc(var(--xl) + 1em) 0;
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  /*Product grid*/
+  .products-grid {
+    width: 100%;
+    margin-top: var(--xl);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+  /* This will be used to move the item back on screen */
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* Burger Menu Animations*/
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
